@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<main>
+    <section class="row bg-grey border-opacity-75 p-5" aria-labelledby="CalculateFactorial">
+        <h1 id="title">Welcome to my Calculate Factorial Website</h1>
+        <p class="lead">For this task, I will build a simple MVC application that allows users to calculate a factorial.</p>
+
+        <p class="lead">The user can enter an integer, and the application will calculate and display the factorial of that integer.</p>
+        @Html.ActionLink("Calculate Factorial", "CreateFactorial", "Factorial")
+    </section>
+    <br />
+    <section class="row bg-grey border-opacity-75 p-5">
+        <img src="~/Images/Factorial_IMG.png" class="img-fluid" />
+    </section>
+</main>

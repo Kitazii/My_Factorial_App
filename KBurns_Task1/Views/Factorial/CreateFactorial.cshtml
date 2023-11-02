@@ -1,0 +1,48 @@
+﻿@model KBurns_Task1.Models.Factorial
+@{
+    ViewBag.Title = "CreateFactorial";
+}
+
+<h2>Calculate Factorial</h2>
+<br />
+<hr />
+
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <section class="col-md-6">
+            <table name="table" class="table table-bordered table-striped">
+                <tr>
+                    <td>@Html.LabelFor(m=>m.UserInput)</td>
+                    <td>@Html.EditorFor(m=>m.UserInput)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(m=>m.FactorialOutput)</td>
+                    <td>@Html.DisplayFor(m=>m.FactorialOutput)</td>
+                </tr>
+            </table>
+            <input name="table" type="submit" value="Calculate Factorial" />
+        </section>
+        <section class="col-md-6">
+            <h3 class="text-decoration-underline">Your Factorial Formula:</h3>
+            <p>
+                @if (Model != null) //Checks if our model variable isnt empty
+                {
+                    for (int i = 1; i <= Model.UserInput; i++)
+                    {
+                        if (i < Model.UserInput)
+                        {
+                            <span>@i x </span> //prints factorial nums
+                        }
+                        else
+                        {
+                            <span>@i = @Model.FactorialOutput</span> //prints factorial answer
+                        }
+                    }
+                }
+            </p>
+            
+        </section>
+    </div>
+    
+}
